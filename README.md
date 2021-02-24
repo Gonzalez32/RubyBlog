@@ -2,6 +2,7 @@
 
 ## First WireFrame
 ## Final WireFrame
+## Technologies Used:
 
 ### RubyBlog: 
 *  Create blog
