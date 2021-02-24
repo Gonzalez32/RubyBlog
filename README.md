@@ -8,7 +8,7 @@
 *  Create blog
 *  Read blog
 *  Update blog
-*  Delete blog
+*  Destroy blog
 
 #### IceBox:
  
