@@ -1,21 +1,31 @@
-<h1>Listing Articles</h1>
-
-<%= link_to 'New article', new_article_path %><br> 
-
-<table>
-    <tr>
-        <th>Title</th>
-        <th>Text</th>
-        <th colspan='2'></th>
-    </tr>
-
-    <% @articles.each do |article| %>
-        <tr>
-            <td><%= article.title %></td>
-            <td><%= article.text %></td>
-            <td><%= link_to 'Show', article_path(article) %></td>
-            <td><%= link_to 'Edit', edit_article_path(article) %></td>
-            <td><%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'ARE YOU SURE?' } %> </td>
-        </tr>
-    <% end %>
-</table>
+<br>
+<div class="container is-max-widescreen">
+    <div class="notification is-danger">
+        <h1 class="title is-1">Listing Articles</h1>
+        <br>
+        
+        <table class="table is-bordered">
+            <tr>
+                <th>Title</th>
+                <th>Text</th>
+                <th>Show Blog</th>
+                <th>Edit Blog</th>
+                <th>Destroy Blog</th>
+            </tr>
+            
+            <% @articles.each do |article| %>
+                <tr>
+                    <td><%= article.title %></td>
+                    <td><%= article.text %></td>
+                    <td><%= link_to 'Show', article_path(article) %></td>
+                    <td><%= link_to 'Edit', edit_article_path(article) %></td>
+                    <td><%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'ARE YOU SURE?' } %> </td>
+                </tr>
+            <% end %>
+        </table>
+        <br>
+        <button class="button is-warning is-outlined">
+            <%= link_to 'New article', new_article_path %>
+        </button>
+    </div>
+</div>
