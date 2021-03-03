@@ -1,31 +1,66 @@
-<br>
-<div class="container is-max-widescreen">
-    <div class="notification is-danger">
-        <h1 class="title is-1">Listing Articles</h1>
-        <br>
-        
-        <table class="table is-bordered">
-            <tr>
-                <th>Title</th>
-                <th>Text</th>
-                <th>Show Blog</th>
-                <th>Edit Blog</th>
-                <th>Destroy Blog</th>
-            </tr>
-            
-            <% @articles.each do |article| %>
-                <tr>
-                    <td><%= article.title %></td>
-                    <td><%= article.text %></td>
-                    <td><%= link_to 'Show', article_path(article) %></td>
-                    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-                    <td><%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'ARE YOU SURE?' } %> </td>
-                </tr>
-            <% end %>
-        </table>
-        <br>
-        <button class="button is-warning is-outlined">
-            <%= link_to 'New article', new_article_path %>
-        </button>
+
+<section class="hero is-warning is-fullheight">
+    <div class="hero-body">
+        <div class="tile is-ancestor">
+            <h1 class="title is-1">Listing Articles</h1>
+            <div class="tile is-vertical is-8">
+                <% @articles.each do |article| %>
+                <div class="tile">
+                    <div class="tile is-parent">
+                        <article class="tile is-child notification is-light">
+                            <p class="title"><%= article.title %></p>
+                            <p class="subtitle"><%= article.text %></p>
+                            <div class="buttons has-addons">
+                                <button class="button is-rounded is-success"><%= link_to 'Show', article_path(article) %></button>    
+                                <button class="button is-rounded is-link"><%= link_to 'Edit', edit_article_path(article) %></button>
+                                <button class="button is-rounded is-danger"><%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'ARE YOU SURE?' } %></button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <% end %>
+            </div>  
+        </div>
+        <!-- <div class="container is-max-widescreen">
+            <div class="notification is-warning">
+                <h1 class="title is-3">List Table</h1>
+                <br>
+                
+                <table class="table is-bordered">
+                    <tr>
+                        <th>Title</th>
+                        <th>Text</th>
+                        <th>Show Blog</th>
+                        <th>Edit Blog</th>
+                        <th>Destroy Blog</th>
+                    </tr>
+                    
+                    <% @articles.each do |article| %>
+                        <tr>
+                            <td><%= article.title %></td>
+                            <td><%= article.text %></td>
+                            <td><button class="button is-rounded is-info"><%= link_to 'Show', article_path(article) %></button></td>
+    
+                            <td><%= link_to 'Edit', edit_article_path(article) %></td>
+                            <td><%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'ARE YOU SURE?' } %> </td>
+                        </tr>
+                    <% end %>
+                </table> -->
+                
+                <!-- <button class="button is-warning is-outlined">
+                    <%= link_to 'New article', new_article_path %>
+                </button> -->
+            </div>
+        </div>
     </div>
-</div>
+</section>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            <strong>My Blog</strong> by <a href="https://github.com/Gonzalez32">Juan C Gonzalez</a>. The source code is licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+        </p>
+    </div>
+</footer>
