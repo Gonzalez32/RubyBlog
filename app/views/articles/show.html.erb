@@ -1,23 +1,37 @@
-<br>
-<div class="container is-max-widescreen">
-  <div class="notification is-danger">
-    <p>
-      <strong>Title:</strong>
-      <%= @article.title %>
-    </p>
- 
-    <p>
-      <strong>Text:</strong>
-      <%= @article.text %>
-    </p>
-
-    <h2>Comments</h2>
-    <%= render @article.comments %> 
-    
-    <h2>Add a comment:</h2>
-    <%= render 'comments/form' %> 
-    
-    <%= link_to 'Edit', edit_article_path(@article) %> |
-    <%= link_to 'Back', articles_path %>
+<section class="hero is-warning is-fullheight">
+  <div class="hero-body">
+    <h1 class="title is-1"><%= @article.title %></h1>
+    <div class="container is-max-widescreen">
+      <div class="notification is-light">
+        <p>
+          <strong>Title:</strong>
+          <%= @article.title %>
+        </p>
+        <br>
+        <p>
+          <strong>Text:</strong>
+          <%= @article.text %>
+        </p>
+        <br>
+        <h2 class="title is-4">Comments</h2>
+        <%= render @article.comments %> 
+        <br>
+        <h2>Add a comment:</h2>
+        <%= render 'comments/form' %> 
+        
+        <%= link_to 'Edit', edit_article_path(@article) %> |
+        <%= link_to 'Back', articles_path %>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+      <p>
+          <strong>My Blog</strong> by <a href="https://github.com/Gonzalez32">Juan C Gonzalez</a>. The source code is licensed
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+          is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+      </p>
+  </div>
+</footer>
