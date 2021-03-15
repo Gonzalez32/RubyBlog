@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :models
+  # This is will change welcome to home/index
   get 'welcome/index'
 
   resources :articles do
